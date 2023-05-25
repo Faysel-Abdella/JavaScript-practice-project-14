@@ -10,7 +10,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 95vh;
+  height: 100vh;
   margin: 0;
   overflow: hidden;
   font-family: "Lato", sans-serif;
@@ -69,21 +69,19 @@ h1 button {
   left: 0;
   height: 100%;
   width: 100%;
-  transform: translateX(50%) rotateY(-20deg);
+  transform: translateX(50%) rotateY(-10deg);
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
-/* When the card is come*/
 .card.active {
   cursor: pointer;
   opacity: 1;
-  z-index: 10; /* To make sure the active car is always on top*/
+  z-index: 10;
   transform: translateX(0) rotateY(0deg);
 }
 
-/* When the card go over*/
 .card.left {
-  transform: translateX(-50%) rotateY(20deg);
+  transform: translateX(-50%) rotateY(10deg);
 }
 
 .inner-card {
@@ -103,15 +101,15 @@ h1 button {
 .inner-card-front,
 .inner-card-back {
   backface-visibility: hidden;
-  position: absolute; /* The question wil be on top of  the answer*/
+  position: absolute; /* The question is above answer*/
   top: 0;
   left: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100%; /* In order the align-items to work*/
-  width: 100%; /* In order the justify-content to work*/
-  background: #fff; /* To make the answer not to show since if both question and answer has background of write the answer would not shown*/
+  height: 100%; /* To make the align-item work*/
+  width: 100%; /* To make the justify work*/
+  background: #fff;
 }
 
 .inner-card-front {
@@ -123,11 +121,10 @@ h1 button {
   transform: rotateX(180deg);
 }
 
-/* The flip button */
 .inner-card-front::after,
 .inner-card-back::after {
   content: "\f021  Flip";
-  font-family: "Font Awesome 5 Free", Lato;
+  font-family: "Font Awesome 5 Free", Lato, sans-serif;
   position: absolute;
   top: 10px;
   right: 10px;
@@ -135,8 +132,6 @@ h1 button {
   font-size: 16px;
   color: #ddd;
 }
-
-/* The footer add new card navigations */
 
 .navigation {
   display: flex;
@@ -155,8 +150,8 @@ h1 button {
 }
 
 .add-container {
-  opacity: 0; /* The defualt(first) value then will be displayed when the add new card button is clicked */
-  /* z-index: -1; */
+  opacity: 0;
+  z-index: -1;
   background-color: #f0f0f0;
   border-top: 2px solid #eee;
   display: flex;
@@ -192,8 +187,4 @@ h1 button {
   padding: 12px;
   min-width: 500px;
   max-width: 100%;
-}
-
-.form-group textarea:focus {
-  outline: 1px solid #10d167;
 }
